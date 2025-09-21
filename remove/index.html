@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کارها</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        *{
+            font-family: vazirmatn;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list">
+        <h1>لیست کارها</h1>
+        <input type="text" required placeholder="کار جدید را وارد کنید" id="task">
+        <button onclick="add()"> افزودن </button>
+    </div>
+    <ul id="demo">
+        <!-- <div>
+            <p>وظیفه اول</p> <button>حذف</button>
+        </div>
+        <div>
+            <p>وظیفه اول</p> <button>حذف</button>
+        </div>
+        <div>
+            <p>وظیفه اول</p> <button onclick="removeItem()">حذف</button>
+        </div> -->
+    </ul>
+    <script>
+        let listvalue = document.getElementById("task");
+        let taskList = document.getElementById("demo");
+        function add() {
+
+            let textValue = listvalue.value;
+            const li = document.createElement("li");
+            const btn = document.createElement("button");
+
+            li.textContent = textValue;
+            btn.textContent = "حذف";
+            btn.onclick=function(){
+                taskList.removeChild(li);
+            }
+            taskList.appendChild(li);
+            li.appendChild(btn);
+
+
+        }
+
+    </script>
+</body>
+
+</html>
